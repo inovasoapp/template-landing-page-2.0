@@ -1,6 +1,7 @@
 import Image from "next/image";
 import heroImage from "./images/hero.png";
 import { VoiceNote } from "./components/voice-note";
+import { MorphingButton } from "./components/MorphingButton";
 
 export default function Hero() {
   return (
@@ -17,9 +18,7 @@ export default function Hero() {
               corporis natus! Corrupti voluptatem ipsum dolores maxime
               exercitationem, sint corporis ex!
             </p>
-            <button className="bg-amber-400 text-black px-6 py-3 rounded-full mt-10 hover:cursor-pointer hover:bg-amber-500 transition-colors duration-300">
-              Button
-            </button>
+            <MorphingButton />
           </div>
 
           <div className="relative w-full md:max-w-1/2 flex items-center justify-center z-20">

@@ -34,8 +34,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning className="custom-scrollbar">
       <body
+        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${bebasNeue.variable} font-sans antialiased`}
       >
         {children}
