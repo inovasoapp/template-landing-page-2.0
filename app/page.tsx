@@ -1,4 +1,5 @@
 import Hero from "./components/Hero/page";
+import { ImageBentoGrid } from "./components/ImageBentoGrid";
 import { LogoCloud } from "./components/LogoCloud/LogoCloud";
 import { QRCodeInovaso } from "./components/QRCodeInovaso";
 import StatsSection from "./components/StatsSection";
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <LogoCloud />
       <StatsSection />
+      <ImageBentoGrid />
       <QRCodeInovaso />
 
       <UserCard
