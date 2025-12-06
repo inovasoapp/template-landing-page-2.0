@@ -1,6 +1,6 @@
 export function QRCodeInovaso() {
   return (
-    <div className="w-32 h-32 rounded-2xl bg-white/10">
+    <div className="flex-none w-36 h-36 rounded-2xl bg-white/10">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 33 33"
