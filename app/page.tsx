@@ -4,6 +4,7 @@ import { ImageBentoGrid } from "./components/ImageBentoGrid";
 import { LogoCloud } from "./components/LogoCloud/LogoCloud";
 
 import StatsSection from "./components/StatsSection";
+import { TeamCarousel } from "./components/TeamCarousel";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <StatsSection />
       <ImageBentoGrid />
       <AboutUs />
+      <TeamCarousel />
     </main>
   );
 }

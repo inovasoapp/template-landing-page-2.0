@@ -9,7 +9,15 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
         hostname: "html.tailus.io",
+      },
+      {
+        protocol: "https",
+        hostname: "hoirqrkdgbmvpwutwuwj-all.supabase.co",
       },
     ],
   },
