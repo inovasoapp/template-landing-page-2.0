@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, cloneElement, isValidElement } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X } from "lucide-react";
 
@@ -77,7 +77,14 @@ export function MorphingButton({ title, children }: MorphingButtonProps) {
               transition={{ delay: 0.1 }}
               className="text-black text-4xl font-bold"
             >
-              {children}
+              {isValidElement(children)
+                ? cloneElement(
+                    children as React.ReactElement<{ onClose?: () => void }>,
+                    {
+                      onClose: () => setIsOpen(false),
+                    }
+                  )
+                : children}
             </motion.div>
           </motion.div>
         )}

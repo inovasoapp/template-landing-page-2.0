@@ -4,7 +4,11 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { AnimatedInput } from "./AnimatedInput";
 
-export function FormCarousel() {
+interface FormCarouselProps {
+  onClose?: () => void;
+}
+
+export function FormCarousel({ onClose }: FormCarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -140,7 +144,7 @@ export function FormCarousel() {
               className="group flex items-center gap-2 bg-amber-500 text-zinc-800 text-base md:text-xl px-8 py-2 rounded-full mt-10 hover:cursor-pointer hover:bg-amber-600/50 transition-colors duration-300 font-medium"
               onClick={handleNextSlide}
             >
-              <span>Finalizar</span>
+              <span>Enviar</span>
             </button>
           </div>
         </div>
@@ -154,6 +158,7 @@ export function FormCarousel() {
           <button
             type="button"
             className="group flex items-center gap-2 bg-amber-500 text-zinc-800 text-base md:text-xl px-8 py-2 rounded-full mt-10 hover:cursor-pointer hover:bg-amber-600/50 transition-colors duration-300 font-medium"
+            onClick={onClose}
           >
             <span>Finalizar</span>
           </button>
