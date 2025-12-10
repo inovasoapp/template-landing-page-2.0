@@ -4,7 +4,12 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X } from "lucide-react";
 
-export function MorphingButton() {
+interface MorphingButtonProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+export function MorphingButton({ title, children }: MorphingButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -30,7 +35,7 @@ export function MorphingButton() {
       {/* Placeholder to hold space when the motion button is gone (morphed into modal) */}
       {isOpen && (
         <button className="bg-amber-400 text-black px-6 py-3 rounded-full mt-10 font-medium invisible">
-          Button
+          {title}
         </button>
       )}
 
@@ -41,7 +46,7 @@ export function MorphingButton() {
           className="bg-amber-400 text-black px-6 py-3 rounded-full mt-10 hover:cursor-pointer hover:bg-amber-500 transition-colors duration-300 font-medium"
           style={{ borderRadius: "9999px" }}
         >
-          Button
+          {title}
         </motion.button>
       )}
 
@@ -62,7 +67,7 @@ export function MorphingButton() {
               }}
               className="absolute top-6 right-6 p-2 text-black hover:bg-black/10 rounded-full transition-colors cursor-pointer z-10000"
             >
-              <X size={32} />
+              <X size={32} className="text-zinc-600" />
             </motion.button>
 
             <motion.div
@@ -72,7 +77,7 @@ export function MorphingButton() {
               transition={{ delay: 0.1 }}
               className="text-black text-4xl font-bold"
             >
-              Modal Content
+              {children}
             </motion.div>
           </motion.div>
         )}

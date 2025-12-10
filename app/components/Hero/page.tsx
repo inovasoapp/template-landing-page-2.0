@@ -2,6 +2,7 @@ import Image from "next/image";
 import heroImage from "./images/hero.png";
 import { VoiceNote } from "./components/voice-note";
 import { MorphingButton } from "./components/MorphingButton";
+import { FormCarousel } from "./components/FormCarousel";
 
 export default function Hero() {
   return (
@@ -18,7 +19,9 @@ export default function Hero() {
               corporis natus! Corrupti voluptatem ipsum dolores maxime
               exercitationem, sint corporis ex!
             </p>
-            <MorphingButton />
+            <MorphingButton title="Cadastrar">
+              <FormCarousel />
+            </MorphingButton>
           </div>
 
           <div className="relative w-full md:max-w-1/2 flex items-center justify-center z-20">
