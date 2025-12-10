@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface AnimatedInputProps {
   placeholder: string;
@@ -18,9 +18,33 @@ export function AnimatedInput({
 }: AnimatedInputProps) {
   const [focused, setFocused] = useState(false);
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && inputRef.current) {
+            inputRef.current.focus({ preventScroll: true });
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (inputRef.current) {
+      observer.observe(inputRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="relative w-full">
       <input
+        ref={inputRef}
         type={type}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
