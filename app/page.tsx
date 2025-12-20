@@ -1,4 +1,6 @@
 import AboutUs from "./components/AboutUs";
+import { BenefitsSection } from "./components/BenefitsSection";
+import { CarouselMockup } from "./components/CarouselMockup";
 import Hero from "./components/Hero/page";
 import { ImageBentoGrid } from "./components/ImageBentoGrid";
 import { LogoCloud } from "./components/LogoCloud/LogoCloud";
@@ -15,6 +17,8 @@ export default function Home() {
       <ImageBentoGrid />
       <AboutUs />
       <TeamCarousel />
+      <BenefitsSection />
+      <CarouselMockup />
     </main>
   );
 }
